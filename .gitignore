@@ -4,7 +4,7 @@ __pycache__/
 param.py/
 postgreb/
 mongo/
-images
+images/
 models/
 dataset10 
 lecteur/config.py
