@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module apprentissage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>apprentissage</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/bob/Musique/machine_learning/apprentissage.py">/home/bob/Musique/machine_learning/apprentissage.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="cv2.html">cv2</a><br>
+<a href="glob.html">glob</a><br>
+<a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+<a href="seaborn.html">seaborn</a><br>
+<a href="tensorflow.html">tensorflow</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="apprentissage.html#Train">Train</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Train">class <strong>Train</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Train">Train</a>(batch=4,&nbsp;epochs=2)<br>
+&nbsp;<br>
+entraînement&nbsp;de&nbsp;différents&nbsp;modèles&nbsp;sur&nbsp;les&nbsp;images&nbsp;du&nbsp;dossier&nbsp;dataset10<br>
+trois&nbsp;algorithmes&nbsp;disponibles&nbsp;:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;lstm&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;cnn&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;vgg16<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Train-__init__"><strong>__init__</strong></a>(self, batch=4, epochs=2)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Train-apprentissage_cnn"><strong>apprentissage_cnn</strong></a>(self) -&gt; None</dt><dd><tt>lancer&nbsp;l'apprentissage&nbsp;du&nbsp;modèle&nbsp;cnn</tt></dd></dl>
+
+<dl><dt><a name="Train-apprentissage_lstm"><strong>apprentissage_lstm</strong></a>(self) -&gt; None</dt><dd><tt>lancer&nbsp;l'apprentissage&nbsp;du&nbsp;modèle&nbsp;rnn</tt></dd></dl>
+
+<dl><dt><a name="Train-apprentissage_vgg16"><strong>apprentissage_vgg16</strong></a>(self) -&gt; None</dt><dd><tt>lancer&nbsp;l'apprentissage&nbsp;du&nbsp;modèle&nbsp;vgg16&nbsp;par&nbsp;transfert&nbsp;learning</tt></dd></dl>
+
+<dl><dt><a name="Train-call_backs"><strong>call_backs</strong></a>(self) -&gt; None</dt><dd><tt>fonctions&nbsp;callbacks&nbsp;pour&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;stopper&nbsp;le&nbsp;modèle&nbsp;d'apprentissage&nbsp;si&nbsp;il&nbsp;n'évolue&nbsp;plus<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;sauvegarder&nbsp;le&nbsp;modèle&nbsp;en&nbsp;cas&nbsp;d'évolution</tt></dd></dl>
+
+<dl><dt><a name="Train-load_dataset_cv2"><strong>load_dataset_cv2</strong></a>(self, train_test: bool = True, three_channels: bool = True, tanh: bool = False) -&gt; Tuple[numpy.ndarray, numpy.ndarray]</dt><dd><tt>charger&nbsp;les&nbsp;images&nbsp;avec&nbsp;opencv&nbsp;;&nbsp;pour&nbsp;les&nbsp;gros&nbsp;datasets&nbsp;il&nbsp;est&nbsp;déconseillé&nbsp;de&nbsp;l'utiliser<br>
+avec&nbsp;le&nbsp;chargement&nbsp;opencv,&nbsp;les&nbsp;métriques&nbsp;sont&nbsp;disponibles</tt></dd></dl>
+
+<dl><dt><a name="Train-load_dataset_keras"><strong>load_dataset_keras</strong></a>(self, mode: str = 'rgb', tanh: bool = False) -&gt; Tuple[tensorflow.python.data.ops.dataset_ops.DatasetV2, tensorflow.python.data.ops.dataset_ops.DatasetV2]</dt><dd><tt>charger&nbsp;un&nbsp;gros&nbsp;dataset&nbsp;avec&nbsp;un&nbsp;utilitaire&nbsp;de&nbsp;keras&nbsp;pour&nbsp;mieux&nbsp;gérer&nbsp;la&nbsp;mémoire<br>
+les&nbsp;métriques&nbsp;sont&nbsp;désactivées</tt></dd></dl>
+
+<dl><dt><a name="Train-main"><strong>main</strong></a>(self, architecture: str = 'cnn', chargement: str = 'keras') -&gt; None</dt><dd><tt>lancement&nbsp;du&nbsp;programme</tt></dd></dl>
+
+<dl><dt><a name="Train-model_cnn"><strong>model_cnn</strong></a>(self) -&gt; keras.engine.training.Model</dt><dd><tt>création&nbsp;d'un&nbsp;modèle&nbsp;avec&nbsp;couches&nbsp;de&nbsp;convolutions&nbsp;;&nbsp;la&nbsp;taille&nbsp;des&nbsp;images&nbsp;est&nbsp;de&nbsp;100x100,&nbsp;mode&nbsp;rgb</tt></dd></dl>
+
+<dl><dt><a name="Train-model_lstm"><strong>model_lstm</strong></a>(self, shape1: int, shape2: int) -&gt; keras.engine.training.Model</dt><dd><tt>modèle&nbsp;avec&nbsp;cellules&nbsp;Long-Short-Term-Memory,&nbsp;taille&nbsp;d'entrée&nbsp;100x100,&nbsp;mode&nbsp;nuances&nbsp;de&nbsp;gris</tt></dd></dl>
+
+<dl><dt><a name="Train-model_vgg16"><strong>model_vgg16</strong></a>(self) -&gt; keras.engine.training.Model</dt><dd><tt>modèle&nbsp;VGG16&nbsp;utilisé&nbsp;pour&nbsp;un&nbsp;transfert&nbsp;learning&nbsp;;&nbsp;les&nbsp;poids&nbsp;des&nbsp;couches&nbsp;d'entrées&nbsp;conservent&nbsp;les&nbsp;poids&nbsp;'imagenet'<br>
+des&nbsp;couches&nbsp;full&nbsp;connected&nbsp;sont&nbsp;ajoutées&nbsp;en&nbsp;sortie&nbsp;pour&nbsp;l'apprentissage<br>
+taille&nbsp;des&nbsp;images&nbsp;:&nbsp;224x224,&nbsp;mode&nbsp;rgb</tt></dd></dl>
+
+<dl><dt><a name="Train-nom_formatter"><strong>nom_formatter</strong></a>(self) -&gt; str</dt><dd><tt>définit&nbsp;un&nbsp;nom&nbsp;de&nbsp;fichier&nbsp;avec&nbsp;la&nbsp;date&nbsp;YYYY_MM_DD&nbsp;puis&nbsp;le&nbsp;timestamp</tt></dd></dl>
+
+<dl><dt><a name="Train-pred_to_numpy"><strong>pred_to_numpy</strong></a>(self, pred: numpy.ndarray) -&gt; numpy.ndarray</dt><dd><tt>convertir&nbsp;le&nbsp;tableau&nbsp;de&nbsp;prédictions&nbsp;en&nbsp;0&nbsp;(song)&nbsp;ou&nbsp;1&nbsp;(instru)</tt></dd></dl>
+
+<dl><dt><a name="Train-to_json"><strong>to_json</strong></a>(self) -&gt; None</dt><dd><tt>enregistre&nbsp;le&nbsp;dataframe&nbsp;au&nbsp;format&nbsp;json&nbsp;pour&nbsp;récupérer&nbsp;les&nbsp;résultats&nbsp;en&nbsp;front-end</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>Tuple</strong> = typing.Tuple</td></tr></table>
+</body></html>

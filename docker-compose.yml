@@ -1,0 +1,54 @@
+version: "3.6"
+
+services: 
+  postgr:
+    container_name: "music_classification"
+    image: postgres:14
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./postgreb:/var/lib/postgresql/data
+
+      
+  streamlit:
+    container_name: dashboard
+    build:
+      context: .
+      dockerfile: dashboard/Dockerfile
+    volumes:
+      - ./dashboard/data:/app
+    ports:
+      - 8123:8080
+
+  api_musique:
+    build:
+        context: .
+        dockerfile: ./api_sound/Dockerfile
+    image: flask:0.0.1
+    container_name: flask_musique
+    volumes:
+      - ./api_sound/app:/home/
+    environment:
+      - FLASK_APP=/home/main.py
+    command: flask run --host=0.0.0.0
+    ports:
+      - 5001:5000
+
+  mongo:
+    image: mongo
+    container_name: mongo_musique
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes: 
+      - ./mongo:/data/db
+    ports:
+      - 27018:27017
+
+networks:
+  default:
+    external:
+      name: music_network

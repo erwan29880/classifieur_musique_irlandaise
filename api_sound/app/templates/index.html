@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='trame.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/chart.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/histo.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="titre"></h1>
+
+    <div class="container">
+
+        <label for="histo">historique</label>
+
+        <select name="histo" id="histo">
+            {% for i in files %}
+            <option value="{{i}}">{{i}}</option>
+            {% endfor %}
+        </select>
+
+        <h2>Loss</h2>
+        <canvas id="myChart1"></canvas>
+        
+        <h2>Précision</h2>
+        <canvas id="myChart2"></canvas>
+
+        <h2>Recall</h2>
+        <canvas id="myChart3"></canvas>
+
+        
+        </div>
+
+
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='js/events.js') }}"></script>
+</html>

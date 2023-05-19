@@ -1,0 +1,10 @@
+__pycache__/ 
+.ipynb_checkpoints/ 
+.pytest_cache/
+param.py/
+postgreb/
+mongo/
+images
+models/
+dataset10 
+lecteur/config.py
