@@ -8,9 +8,9 @@ La labellisation a été effectuée en partie avec les noms d'airs webscrapés s
 
 La classification se fait par spectrogramme (transformation de Mel), images correspondant à 30 secondes de musique. 
 
-![spectrum](dashboard/data/images/2865.png)
+![spectrum](2865.png)
 
 Le lecteur créé pour l'occasion :  
 
-![lecteur](dashboard/data/images/appli_finale.png)
+![lecteur](appli_finale.png)
 
